@@ -1,5 +1,11 @@
 .git
 .gitignore
 .sync-config.cson
-LICENSE
+LICENSE*
 README*
+
+.tags
+*.swp
+*.lck
+*.*!
+*~

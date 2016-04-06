@@ -1,0 +1,25 @@
+version: "2"
+services:
+
+  loopbackimage:
+    container_name: loopback
+    build: build
+    ulimits:
+      nproc: 65535
+      nofile:
+        soft: 20000
+        hard: 40000
+    ports:
+      - "3000:3000"
+    volumes:
+      - source:/source
+    networks:
+      - front
+
+volumes:
+  source:
+    driver: local
+
+networks:
+  front:
+    driver: bridge
