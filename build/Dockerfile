@@ -8,8 +8,11 @@ ENV PACKAGE='loopback strongloop' \
     LOOPBACK_DIR=/source
 
 RUN npm install -g ${PACKAGE}
+RUN npm install -g loopback-connector-mongodb loopback-connector-redis loopback-connector-mysql loopback-connector-postgresql loopback-connector-remote loopback-connector-rest loopback-component-storage
+
+#loopback-connector-push
 
 EXPOSE ${PORT}
 
 WORKDIR ${LOOPBACK_DIR}
-ENTRYPOINT ["switch","shell=/bin/bash","--","/bin/sh"]
+ENTRYPOINT ["switch","shell=/bin/bash","--","slc arc"]
